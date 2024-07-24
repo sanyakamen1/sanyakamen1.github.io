@@ -1,8 +1,8 @@
 // Список изображений с соответствующими вероятностями
 const images = [
-    { src: "D://standoff app//web//templates//app_icon.png", probability: 0.5 },
-    { src: "D://standoff app//web//templates//standoff case.png", probability: 0.3 },
-    { src: "D://standoff app//web//templates//pngegg (1).png", probability: 0.2 }
+    { src: "/app_icon.png", probability: 0.5 },
+    { src: "standoff case.png", probability: 0.3 },
+    { src: "pngegg (1).png", probability: 0.2 }
 ];
 
 function changeImage() {
