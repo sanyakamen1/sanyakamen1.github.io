@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0a18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 30% auto;
+    height: auto;
+    width: 300px;
+    cursor: pointer;
+}
+
+h1 {
+    color   : #fff;
+    text-align: center;
+    margin-top: 100px;
+    font: verdana;
+}
