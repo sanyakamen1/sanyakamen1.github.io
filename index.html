@@ -39,7 +39,6 @@
             let box_el = document.getElementById("mainImage");
 
             const tg = window.Telegram.WebApp;
-            alert (tg.isExpanded);
             const cash = Math.floor(Math.random() * 1000) + 1;
 
             if (cash < 100) {
@@ -52,12 +51,12 @@
                 box_el.src = "./standoff case.png";
             }
 
-            // box_el.disabled = true;
+            box_el.disabled = true;
 
-            // sleep(5000);
+            sleep(500);
 
             // tg.sendData(cash);
-            // tg.close();
+            tg.close();
 }
 
         // box_el.addEventListener(
