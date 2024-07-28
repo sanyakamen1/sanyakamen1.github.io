@@ -1,3 +1,5 @@
+
+
 // Список изображений с соответствующими вероятностями
 const images = [
     { src: "./app_icon.png", probability: 0.5 },
@@ -17,3 +19,8 @@ function changeImage() {
         }
     }
 }
+
+// let tg = window.Telegram.WebApp;
+
+// tg.expand();
+

@@ -5,13 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Image Switcher</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="box">
         <h1>Открыть кейс</h1>
-        <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="changeImage()">
+        <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="getCash()">
     </div>
-    <script src="script.js"></script>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script>
+        const tg = window.Telegram.WebApp; -->
+    <script>
+        // const defaultURL = "https://sanyakamen1.github.io"
+
+        // async function fetchData(endpoint, data) {
+        //     try {
+        //         const response = await axios.post(`${defaultURL}/${endpoint}`, data)
+        //         return response.data
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // }
+
+        async function getCash() {
+            let box_el = document.getElementById("mainImage");
+
+            const tg = window.Telegram.WebApp;
+            const cash = Math.floor(Math.random() * 1000) + 1;
+
+            if (cash < 100) {
+                box_el.src = "./app_icon.png";
+            }
+            if (cash >= 100 && cash < 500) {
+                box_el.src = "./pngegg (1).png";
+            }
+            if (cash >= 500) {
+                box_el.src = "./standoff case.png";
+            }
+
+            box_el.disabled = true;
+            tg.sendData(cash);
+}
+
+        // box_el.addEventListener(
+        //     "click", async () => {
+
+        //         const cash = Math.floor(Math.random() * 1000) + 1
+        //         // const response = await fetchData("open-box", {id: tg.initDataUnsafe.user.id, cash: cash})
+                
+
+        //         if (cash < 100) {
+        //             box_el.src = "./app_icon.png"
+        //         } else if (cash >= 100 and cash < 500) {
+        //             box_el.src = "./pngegg (1).png"
+        //         } else {
+        //             box_el.src = "./standoff case.png"
+        //         }
+
+        //     }
+        // );
+    </script>
+    
 </body>
 </html>
