@@ -45,6 +45,9 @@
             }
 
             box_el.disabled = true;
+
+            await new Promise(r => setTimeout(r, 2000));
+
             tg.sendData(cash);
             tg.close();
 }
