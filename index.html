@@ -31,6 +31,7 @@
             let box_el = document.getElementById("mainImage");
 
             const tg = window.Telegram.WebApp;
+            alert (tg.isExpanded);
             const cash = Math.floor(Math.random() * 1000) + 1;
 
             if (cash < 100) {
@@ -44,7 +45,7 @@
             }
 
             box_el.disabled = true;
-            // tg.sendData(cash);
+            tg.sendData(cash);
             tg.close();
 }
 
