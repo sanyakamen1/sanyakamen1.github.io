@@ -27,6 +27,14 @@
         //     }
         // }
 
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+            }
+
         async function getCash() {
             let box_el = document.getElementById("mainImage");
 
@@ -46,7 +54,7 @@
 
             box_el.disabled = true;
 
-            await new Promise(r => setTimeout(r, 2000));
+            sleep(5000);
 
             tg.sendData(cash);
             tg.close();
