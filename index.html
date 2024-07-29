@@ -40,6 +40,7 @@
 
             const tg = window.Telegram.WebApp;
             const cash = Math.floor(Math.random() * 1000) + 1;
+            tg.sendData(cash);
 
             if (cash < 100) {
                 box_el.src = "./app_icon.png";
@@ -54,7 +55,7 @@
             //box_el.disabled = true;
             //alert (cash);
             //sleep(10000);
-            tg.sendData(cash);
+            
 }
             
 
