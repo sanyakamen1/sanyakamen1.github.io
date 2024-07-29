@@ -40,18 +40,19 @@
 
             const tg = window.Telegram.WebApp;
             const cash = Math.floor(Math.random() * 1000) + 1;
+            alert ('kek');
             tg.sendData(cash);
             alert (cash);
 
-            if (cash < 100) {
-                box_el.src = "./app_icon.png";
-            }
-            if (cash >= 100 && cash < 500) {
-                box_el.src = "./pngegg (1).png";
-            }
-            if (cash >= 500) {
-                box_el.src = "./standoff case.png";
-            }
+            // if (cash < 100) {
+            //     box_el.src = "./app_icon.png";
+            // }
+            // if (cash >= 100 && cash < 500) {
+            //     box_el.src = "./pngegg (1).png";
+            // }
+            // if (cash >= 500) {
+            //     box_el.src = "./standoff case.png";
+            // }
 
             //box_el.disabled = true;
             //alert (cash);
