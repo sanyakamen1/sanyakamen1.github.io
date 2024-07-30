@@ -20,7 +20,7 @@
             do {
                 currentDate = Date.now();
             } while (currentDate - date < milliseconds);
-            }
+            };
         
         async function getCash() {
             let box_el = document.getElementById("mainImage");
@@ -39,10 +39,10 @@
             }
             
             box_el.onclick = null;
-            alert (cash);
+            alert (cash)
             tg.sendData(cash);
             
-        }
+        };
 
     </script>
     
