@@ -20,7 +20,7 @@
             do {
                 currentDate = Date.now();
             } while (currentDate - date < milliseconds);
-            };
+            }
         
         function getCash() {
             let box_el = document.getElementById("mainImage");
@@ -38,10 +38,10 @@
                 box_el.src = "./standoff case.png";
             }
             box_el.onclick = null;
-            alert (cash)
+            alert (cash);
             tg.sendData(cash);
             
-        };
+        }
 
     </script>
     
