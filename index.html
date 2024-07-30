@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5; /* Сделает изображение полупрозрачным */
+        }
         /* Стили для модального окна */
         .modal {
             display: none;
@@ -63,7 +67,7 @@
         <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="getCash()">
     </div>
     <div id="myModal" class="modal">
-    <div class="modal-content">
+        <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <img src="./AK.png" alt="Skin">
             <button id= "modalButton" class="modal-button" onclick="closeModal()">Забрать скин</button>
@@ -71,19 +75,20 @@
     </div>
     <script>
 
-        const tg = window.Telegram.WebApp;
-        //tg.expand();
-        const cash = Math.floor(Math.random() * 100) + 1;
-        
-        function getCash() {
-            box_el.onclick = null;
-            show_Modal();
-        }
+    const cash = Math.floor(Math.random() * 100) + 1;
+    const tg = window.Telegram.WebApp;
 
         // function sendData() {
         //     tg.sendData(cash.toString());
         // }
-        
+
+        function getCash() {
+            let box_el = document.getElementById("mainImage");
+
+            box_el.onclick = null;
+            showModal();
+        }
+
         function showModal() {
             const modal = document.getElementById('myModal');
             const modalButton = document.getElementById('modalButton');
@@ -94,7 +99,6 @@
         function closeModal() {
             const modal = document.getElementById('myModal');
             modal.style.display = 'none';
-            //tg.sendData(cash.toString());
         }
 
         // Закрываем модальное окно при клике вне его
@@ -102,10 +106,8 @@
             const modal = document.getElementById('myModal');
             if (event.target == modal) {
                 modal.style.display = 'none';
-               // tg.sendData(cash.toString());
             }
         }
-
     </script>
     
 </body>
