@@ -66,7 +66,7 @@
     <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <img src="./AK.png" alt="Skin">
-            <button id= "modalButton" class="modal-button" onclick="sendData()">Забрать скин</button>
+            <button id= "modalButton" class="modal-button">Забрать скин</button>
         </div>
     </div>
     <script>
@@ -79,9 +79,9 @@
             show_Modal();
         }
 
-        function sendData() {
-            tg.sendData(cash.toString());
-        }
+        // function sendData() {
+        //     tg.sendData(cash.toString());
+        // }
         
         function showModal() {
             const modal = document.getElementById('myModal');
@@ -93,7 +93,7 @@
         function closeModal() {
             const modal = document.getElementById('myModal');
             modal.style.display = 'none';
-            tg.sendData(cash.toString());
+            //tg.sendData(cash.toString());
         }
 
         // Закрываем модальное окно при клике вне его
@@ -101,7 +101,7 @@
             const modal = document.getElementById('myModal');
             if (event.target == modal) {
                 modal.style.display = 'none';
-                tg.sendData(cash.toString());
+               // tg.sendData(cash.toString());
             }
         }
 
