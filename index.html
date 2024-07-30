@@ -22,7 +22,7 @@
             } while (currentDate - date < milliseconds);
             }
         
-        function getCash() {
+        async function getCash() {
             let box_el = document.getElementById("mainImage");
 
             const tg = window.Telegram.WebApp;
@@ -39,9 +39,7 @@
             }
 
             box_el.onclick = null;
-            tg.sendData('Hi!');
-            alert (cash);
-            //tg.close();
+            tg.sendData(cash);
             
         }
 
