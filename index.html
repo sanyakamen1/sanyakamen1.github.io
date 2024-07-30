@@ -10,7 +10,7 @@
 <body>
     <div class="box">
         <h1>Открыть кейс</h1>
-        <img id="mainImage" src="./id_154.png" alt="Closed Case">
+        <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="getCash()">
     </div>
     <!-- <script src="script.js"></script> -->
     <!-- <script>
@@ -27,11 +27,6 @@
         //     }
         // }
 
-        document.getElementById('mainImage').addEventListener('click', () => {
-            // const cash = Math.floor(Math.random() * 1000) + 1;
-            // tg.sendData(cash);
-            alert ('Hi!');
-        });
         
         // function sleep(milliseconds) {
         //     const date = Date.now();
@@ -41,32 +36,37 @@
         //     } while (currentDate - date < milliseconds);
         //     }
 
-        // async function getCash() {
-        //     let box_el = document.getElementById("mainImage");
-
-        //     const tg = window.Telegram.WebApp;
-        //     const cash = Math.floor(Math.random() * 1000) + 1;
-        //     alert ('kek');
-        //     tg.sendData(cash);
-        //     alert (cash);
-
-        //     // if (cash < 100) {
-        //     //     box_el.src = "./app_icon.png";
-        //     // }
-        //     // if (cash >= 100 && cash < 500) {
-        //     //     box_el.src = "./pngegg (1).png";
-        //     // }
-        //     // if (cash >= 500) {
-        //     //     box_el.src = "./standoff case.png";
-        //     // }
-
-        //     //box_el.disabled = true;
-        //     //alert (cash);
-        //     //sleep(10000);
-            
-        // }
-
+        let cash_global = 0;
+        alert (cash);
         
+        async function getCash() {
+            let box_el = document.getElementById("mainImage");
+
+            const tg = window.Telegram.WebApp;
+            const cash = Math.floor(Math.random() * 1000) + 1;
+            //tg.sendData(cash);
+            alert (cash);
+
+            if (cash < 100) {
+                box_el.src = "./app_icon.png";
+            }
+            if (cash >= 100 && cash < 500) {
+                box_el.src = "./pngegg (1).png";
+            }
+            if (cash >= 500) {
+                box_el.src = "./standoff case.png";
+            }
+
+            //box_el.disabled = true;
+            alert ('Changed image');
+            cash_global = cash
+            //sleep(10000);
+            
+        }
+
+        if cash_global != 0 {
+            alert (cash);
+        };
             
 
         // box_el.addEventListener(
