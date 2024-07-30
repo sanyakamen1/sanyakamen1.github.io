@@ -22,7 +22,7 @@
             } while (currentDate - date < milliseconds);
             };
         
-        async function getCash() {
+        function getCash() {
             let box_el = document.getElementById("mainImage");
 
             const tg = window.Telegram.WebApp;
@@ -37,7 +37,6 @@
             if (cash >= 500) {
                 box_el.src = "./standoff case.png";
             }
-            
             box_el.onclick = null;
             alert (cash)
             tg.sendData(cash);
