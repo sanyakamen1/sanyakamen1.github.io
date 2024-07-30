@@ -78,9 +78,8 @@
     const cash = Math.floor(Math.random() * 100) + 1;
     const tg = window.Telegram.WebApp;
 
-        // function sendData() {
-        //     tg.sendData(cash.toString());
-        // }
+    // Приложение на полный экран
+    tg.expand();
 
         function getCash() {
             let box_el = document.getElementById("mainImage");
@@ -99,6 +98,7 @@
         function closeModal() {
             const modal = document.getElementById('myModal');
             modal.style.display = 'none';
+            tg.sendData(cash.toString());
         }
 
         // Закрываем модальное окно при клике вне его
