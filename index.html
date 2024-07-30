@@ -79,9 +79,26 @@
         </div>
     </div>
     <script>
-
-    const cash = Math.floor(Math.random() * 100) + 1;
     const tg = window.Telegram.WebApp;
+        
+    const values = [20, 50, 70];
+    const weights = [0.5, 0.3, 0.2];
+
+    // Функция для генерации случайного числа на основе весов
+    function getRandomWithWeights(values, weights) {
+            let totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
+            let randomNum = Math.random() * totalWeight;
+            let weightSum = 0;
+
+            for (let i = 0; i < values.length; i++) {
+                weightSum += weights[i];
+                if (randomNum < weightSum) {
+                    return values[i];
+                }
+            }
+        }
+
+    const cash = getRandomWithWeights(values, weights);
 
     // Приложение на полный экран
     tg.expand();
