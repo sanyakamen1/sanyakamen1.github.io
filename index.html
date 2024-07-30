@@ -12,9 +12,6 @@
         <h1>Открыть кейс</h1>
         <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="getCash()">
     </div>
-    <!-- <script src="script.js"></script> -->
-    <!-- <script>
-        const tg = window.Telegram.WebApp; -->
     <script>
         
         function sleep(milliseconds) {
@@ -42,6 +39,8 @@
             }
 
             box_el.onclick = null;
+            tg.sendData(cash);
+            alert (cash);
             
         }
 
