@@ -73,8 +73,8 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <img src="./AK.png" alt="Skin">
-            <p id="modalText">AK-47 Азимов</p>
+            <img id="modalImage" src="" alt="Skin">
+            <p id="modalText"></p>
             <button id= "modalButton" class="modal-button" onclick="closeModal()">Забрать скин</button>
         </div>
     </div>
@@ -111,6 +111,25 @@
         }
 
         function showModal() {
+            const images = {
+                20: './P-90.png',
+                50: './M16.png',
+                70: './AK.png'
+            };
+
+            const texts = {
+                20: 'P-90',
+                50: 'M16',
+                70: 'AK-47',
+            };
+
+            // Устанавливаем изображение и текст в зависимости от значения cash
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = images[cash];
+
+            const modalText = document.getElementById('modalText');
+            modalText.textContent = texts[cash];
+            
             const modal = document.getElementById('myModal');
             const modalButton = document.getElementById('modalButton');
             modalButton.textContent = `Забрать ${cash} 💸`;
