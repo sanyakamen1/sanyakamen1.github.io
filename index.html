@@ -66,13 +66,13 @@
     <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <img src="./AK.png" alt="Skin">
-            <button id= "modalButton" class="modal-button">Забрать скин</button>
+            <button id= "modalButton" class="modal-button" onclick="closeModal()">Забрать скин</button>
         </div>
     </div>
     <script>
 
         const tg = window.Telegram.WebApp;
-        tg.expand();
+        //tg.expand();
         const cash = Math.floor(Math.random() * 100) + 1;
         
         function getCash() {
