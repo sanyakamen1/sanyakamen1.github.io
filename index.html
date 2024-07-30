@@ -30,7 +30,6 @@
 
             const tg = window.Telegram.WebApp;
             const cash = Math.floor(Math.random() * 1000) + 1;
-            alert (cash);
 
             if (cash < 100) {
                 box_el.src = "./app_icon.png";
@@ -42,9 +41,7 @@
                 box_el.src = "./standoff case.png";
             }
 
-            //box_el.disabled = true;
-            // alert ('Changed image');
-            // cash_global = cash
+            box_el.disabled = true;
             
         }
 
