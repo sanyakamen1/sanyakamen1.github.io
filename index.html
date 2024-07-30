@@ -59,6 +59,10 @@
         .modal-button:hover {
             background-color: #45a049;
         }
+        #modalText {
+            color: rgb(255, 255, 255); /* Цвет текста */
+            font-size: 24px; /* Размер шрифта */
+        }
     </style>
 </head>
 <body>
@@ -70,6 +74,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <img src="./AK.png" alt="Skin">
+            <p id="modalText">AK-47 Азимов</p>
             <button id= "modalButton" class="modal-button" onclick="closeModal()">Забрать скин</button>
         </div>
     </div>
