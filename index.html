@@ -75,6 +75,7 @@
     <div class="box">
         <h1 style="font-family: Helvetica, sans-serif;">Нажми на кейс, чтобы открыть его</h1>
         <img id="mainImage" src="./id_154.png" alt="Closed Case" onclick="getCash()">
+        <img id="loadingImage" src="./gift-box.gif" alt="Loading" style="display: none;">
     </div>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -113,7 +114,17 @@
             let box_el = document.getElementById("mainImage");
 
             box_el.onclick = null;
-            showModal();
+
+            // Отображаем анимацию загрузки
+            const img = document.getElementById('mainImage');
+            const loadingImg = document.getElementById('loadingImage');
+            img.style.display = 'none';
+            loadingImg.style.display = 'block';
+            
+            setTimeout(() => {
+                loadingImg.style.display = 'none'; // Скрываем анимацию загрузки
+                showModal();
+            }, 4500);
         }
 
         function showModal() {
