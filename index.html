@@ -84,45 +84,24 @@
     // Функция для получения параметра из URL
     function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
-            alert (name);
             const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
                 results = regex.exec(url);
-            alert ('created regex function');
             res = decodeURIComponent(results[2].replace(/\+/g, ' '))
-            alert (res);
             return res;
     }
-
-    // const values = [15, 16, 69, 18, 66, 24, 35, 59, 79, 99];
-    // const weights = [0.2, 0.2, 0.025, 0.2, 0.025, 0.2, 0.09, 0.05, 0.005, 0.005];
-
-    // // Функция для генерации случайного числа на основе весов
-    // function getRandomWithWeights(values, weights) {
-    //         let totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
-    //         let randomNum = Math.random() * totalWeight;
-    //         let weightSum = 0;
-
-    //         for (let i = 0; i < values.length; i++) {
-    //             weightSum += weights[i];
-    //             if (randomNum < weightSum) {
-    //                 return values[i];
-    //             }
-    //         }
-    //     }
-
-    //const cash = getRandomWithWeights(values, weights);
+        
     const cash = getParameterByName('cash');
 
     // Приложение на полный экран
     tg.expand();
 
-        function getCash() {
+    function getCash() {
             let box_el = document.getElementById("mainImage");
             box_el.onclick = null;
             showModal();
         }
 
-        function showModal() {
+    function showModal() {
             const images = {
                 15: 'гифки выпадения/Charm Antidotee.gif',
                 16: 'гифки выпадения/AWM-Scratch.gif',
@@ -146,14 +125,14 @@
             modal.style.display = 'block';
         }
 
-        function closeModal() {
+    function closeModal() {
             const modal = document.getElementById('myModal');
             modal.style.display = 'none';
             tg.sendData(cash.toString());
         }
 
         // Закрываем модальное окно при клике вне его
-        window.onclick = function(event) {
+    window.onclick = function(event) {
             const modal = document.getElementById('myModal');
             if (event.target == modal) {
                 modal.style.display = 'none';
