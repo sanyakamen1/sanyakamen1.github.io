@@ -81,7 +81,7 @@
     <script>
     const tg = window.Telegram.WebApp;
         
-    Функция для получения параметра из URL
+    // Функция для получения параметра из URL
     function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
             alert (name);
@@ -97,22 +97,22 @@
             return res;
     }
 
-    const values = [15, 16, 69, 18, 66, 24, 35, 59, 79, 99];
-    const weights = [0.2, 0.2, 0.025, 0.2, 0.025, 0.2, 0.09, 0.05, 0.005, 0.005];
+    // const values = [15, 16, 69, 18, 66, 24, 35, 59, 79, 99];
+    // const weights = [0.2, 0.2, 0.025, 0.2, 0.025, 0.2, 0.09, 0.05, 0.005, 0.005];
 
-    // Функция для генерации случайного числа на основе весов
-    function getRandomWithWeights(values, weights) {
-            let totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
-            let randomNum = Math.random() * totalWeight;
-            let weightSum = 0;
+    // // Функция для генерации случайного числа на основе весов
+    // function getRandomWithWeights(values, weights) {
+    //         let totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
+    //         let randomNum = Math.random() * totalWeight;
+    //         let weightSum = 0;
 
-            for (let i = 0; i < values.length; i++) {
-                weightSum += weights[i];
-                if (randomNum < weightSum) {
-                    return values[i];
-                }
-            }
-        }
+    //         for (let i = 0; i < values.length; i++) {
+    //             weightSum += weights[i];
+    //             if (randomNum < weightSum) {
+    //                 return values[i];
+    //             }
+    //         }
+    //     }
 
     //const cash = getRandomWithWeights(values, weights);
     const cash = getParameterByName('cash');
