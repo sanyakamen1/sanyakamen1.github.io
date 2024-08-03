@@ -84,10 +84,14 @@
     Функция для получения параметра из URL
     function getParameterByName(name, url = window.location.href) {
             name = name.replace(/[\[\]]/g, '\\$&');
+            alert (name);
             const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
                 results = regex.exec(url);
+            alert ('created regex function');
             if (!results) return null;
+            alert ('checked for null');
             if (!results[2]) return '';
+            alert ('checked for empty param');
             res = decodeURIComponent(results[2].replace(/\+/g, ' '))
             alert (res);
             return res;
