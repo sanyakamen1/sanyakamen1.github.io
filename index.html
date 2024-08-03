@@ -81,15 +81,17 @@
     <script>
     const tg = window.Telegram.WebApp;
 
+    alert (window.location.href);
+        
     // Функция для получения параметра из URL
-    function getParameterByName(name, url = window.location.href) {
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+    // function getParameterByName(name, url = window.location.href) {
+    //         name = name.replace(/[\[\]]/g, '\\$&');
+    //         const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    //             results = regex.exec(url);
+    //         if (!results) return null;
+    //         if (!results[2]) return '';
+    //         return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    // }
 
     const values = [15, 16, 69, 18, 66, 24, 35, 59, 79, 99];
     const weights = [0.2, 0.2, 0.025, 0.2, 0.025, 0.2, 0.09, 0.05, 0.005, 0.005];
