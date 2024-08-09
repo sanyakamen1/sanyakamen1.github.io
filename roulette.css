@@ -1,0 +1,41 @@
+#hidden {
+    display: none;
+}
+#wrapper {
+    display: block;
+    width: calc(200px * 5);
+    margin: 200px auto 0;
+}
+#roulette {
+    /*border: 3px solid #000;*/
+    overflow: hidden;
+    height: 133px;
+    white-space: nowrap;
+    position: relative;
+}
+#roulette::after {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 133px;
+	border: 5px solid #0F0A18;
+	content: ' ';
+	top: -3px;
+}
+#roulette .roulette-item {
+    width: 200px;
+    height: 133px;
+    display: inline-block;
+}
+#roulette .roulette-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+}
+#roulette-buttons {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
