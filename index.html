@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Standoff 2</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="roulette.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="roulette.js"></script>
     <style>
         .disabled {
             pointer-events: none;
@@ -70,6 +72,11 @@
 <body>
     <div class="box">
         <img id="mainImage" src="./открытие кейса.jpg" alt="Closed Case" onclick="getCash()">
+        <div id="wrapper"  style="display: none">
+            <div id="roulette">
+                <div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div>
+            </div>
+    </div>
     </div>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -98,7 +105,25 @@
     function getCash() {
             let box_el = document.getElementById("mainImage");
             box_el.onclick = null;
-            showModal();
+
+            // Отображаем анимацию рулетки
+            const img = document.getElementById('mainImage');
+            const roulette_div = document.getElementById('wrapper');
+            img.style.display = 'none';
+            roulette_div.style.display = 'block';
+
+            const roulette = new Roulette();
+            roulette.init(items);
+            const btnStart = document.getElementById("mainImage");
+
+            const value_to_index = {19: 0, 20: 1, 59: 2, 21: 3, 60: 4, 24: 5, 39: 6, 61: 7, 79: 8, 80: 9};
+
+            roulette.start(value_to_index[cash]);
+        
+            setTimeout(() => {
+                roulette_div.style.display = 'none'; // Скрываем анимацию загрузки
+                showModal();
+            }, 6300);
         }
 
     function showModal() {
