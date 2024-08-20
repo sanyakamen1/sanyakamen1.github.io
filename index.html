@@ -67,6 +67,24 @@
             width: 100%;
             object-fit: contain;
         }
+        #up-arrow {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px; /* Размер стрелки */
+            color: #9669ff; /* Цвет стрелки */
+            z-index: 1000; /* Чтобы стрелка была поверх других элементов */\
+            margin: 0px;
+        }
+        #down-arrow {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px; /* Размер стрелки */
+            color: #9669ff; /* Цвет стрелки */
+            z-index: 1000; /* Чтобы стрелка была поверх других элементов */\
+            margin: 100px;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +94,7 @@
             <div id="roulette">
                 <div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div><div class="roulette-item"><img></div>
             </div>
+            <div id="up-arrow">&#9650;</div>
     </div>
     </div>
     <div id="myModal" class="modal">
@@ -123,7 +142,7 @@
             setTimeout(() => {
                 roulette_div.style.display = 'none'; // Скрываем анимацию загрузки
                 showModal();
-            }, 6300);
+            }, 10000);
         }
 
     function showModal() {
