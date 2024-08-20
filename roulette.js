@@ -24,7 +24,7 @@ class Roulette {
     constructor() {
         this.SIZE = 200;
         this.LENGTH = 80;
-        this.DURATION = 5000;
+        this.DURATION = 9000;
 
         this.progress = 0;
 
@@ -109,7 +109,7 @@ class Roulette {
     }
 
     interpolator(val) {
-        return Math.pow(Math.sin(val * Math.PI / 2), 2.6);
+        return Math.pow(0.2 / (-val-0.17) + 1.17094, 1);
     }
 
     getItem(val) {
